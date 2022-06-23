@@ -1,0 +1,19 @@
+<div class="container-customer" >
+  <button
+  (click)="openModal()">Agregar</button>
+
+  <div *ngIf="modalSwitch==true">
+    <app-modal-customer></app-modal-customer>
+  </div>
+  <app-target-customer
+  *ngFor="let customer of dataCustomers"
+  [customer]="customer"
+  ></app-target-customer>
+ </div>
+
+<!-- <button (click)="createCustomer()">crear customer</button>
+<button (click)="getCustomers()">Lista de customers</button>
+<button (click)="getCustomerById()">customer por id</button>
+<button (click)="updateCustomer()">Editar customer</button>
+<button (click)="deleteCustomer()">Eliminar</button> -->
+<!-- <button (click)="deleteCustomer()">Eliminar</button> -->

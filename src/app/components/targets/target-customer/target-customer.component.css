@@ -1,0 +1,33 @@
+.target-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.name{
+  width: 20%;
+}
+.phone{
+  margin-left: 100px;
+  margin-right: 100px;
+  width: 20%;
+}
+
+.name,.phone{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons{
+  margin-left: 100px;
+}
+
+button{
+  margin: 10px;
+}
+
+

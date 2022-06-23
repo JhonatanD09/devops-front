@@ -1,0 +1,18 @@
+<div class="modal">
+  <div class="modal-body">
+    <button (click)="closeModal()" class="x">x</button>
+
+    <div class="title">
+      <h3>Add Customer</h3>
+    </div>
+    <div class="inputs">
+      <input type="text" placeholder="Name"  [(ngModel)]="name"/>
+      <input type="text" placeholder="Phone" [(ngModel)]="phone"/>
+    </div>
+    <div class="add-button">
+      <a href="/customer">
+        <button class="add" (click)="submitData()">Add</button>
+      </a>
+    </div>
+  </div>
+</div>
