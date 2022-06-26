@@ -6,7 +6,7 @@
     <app-modal-customer></app-modal-customer>
   </div>
   <app-target-customer
-  *ngFor="let customer of dataCustomers"
+  *ngFor="let customer of this.customerService.customers"
   [customer]="customer"
   ></app-target-customer>
  </div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
-
+import { HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { InvoiceComponent } from './components/invoice/invoice.component';
@@ -29,6 +29,7 @@ const appRouter:Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRouter),
     FormsModule
   ],
