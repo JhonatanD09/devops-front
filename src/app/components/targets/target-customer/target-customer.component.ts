@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SwitchService } from 'src/app/services/switch.service';
-import { deleteCustomer } from 'src/services/customer';
-
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-target-customer',
@@ -14,7 +13,7 @@ export class TargetCustomerComponent implements OnInit {
 
   @Input()customer:any ;
 
-  constructor(private modalService : SwitchService) { }
+  constructor(private modalService : SwitchService, public customerService:CustomerService) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +22,6 @@ export class TargetCustomerComponent implements OnInit {
     let btn = e.target as HTMLButtonElement
     let id = btn.id
     this.modalService.$modal.emit(false)
-    deleteCustomer(id)
+    this.customerService.deleteCustomer(id)
   }
 }

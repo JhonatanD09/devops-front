@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwitchService } from 'src/app/services/switch.service';
 
-import {getAllCustomers, createCustomer} from 'src/services/customer'
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-modal-customer',
@@ -15,7 +15,7 @@ export class ModalCustomerComponent implements OnInit {
   phone = ''
 
 
-  constructor(private modalService : SwitchService) { }
+  constructor(private modalService : SwitchService, public customerService:CustomerService) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +25,7 @@ export class ModalCustomerComponent implements OnInit {
   }
 
   submitData(){
-    createCustomer(this.name,this.phone)
+    this.customerService.createCustomer(this.name,this.phone)
     this.closeModal()
   }
 }

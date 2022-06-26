@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { createCustomer,getAllCustomers, getCustomerById, updateCustomer,deleteCustomer} from 'src/services/customer';
+import { CustomerService } from './services/customer.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,37 +8,27 @@ import { createCustomer,getAllCustomers, getCustomerById, updateCustomer,deleteC
 export class AppComponent {
   title = 'front-devops';
 
+  constructor(public customerService:CustomerService){}
 
-  getCustomers(){
-    console.log('get')
-    getAllCustomers().then( async (req)=>{
-      let data = await req.json()
-      console.log(data)
-    }
-    )
-  }
 
   deleteCustomer(){
-    console.log('dlete')
-    deleteCustomer('1')
+    
+    this.customerService.deleteCustomer('1')
   }
 
   updateCustomer(){
     console.log('update')
-    updateCustomer('1',"Andres Editado", "3232409986")
+    this.customerService.updateCustomer('1',"Andres Editado", "3232409986")
   }
 
   getCustomerById(){
     console.log('get id 1')
-    getCustomerById('1').then( async (req)=>{
-      let data = await req.json()
-      console.log(data)
-    }
-    )
+    let data=this.customerService.getCustomerById('1');
+    console.log(data)
   }
 
   createCustomer(){
     console.log('click')
-    createCustomer('Danilo','12345')
+    this.customerService.createCustomer('Danilo','12345')
   }
 }
