@@ -32,12 +32,12 @@ public class InvoiceRestController {
     
     @GetMapping("/{id}")
     public Optional<Invoice> get(@PathVariable String id) {
-        return customerRepository.findById(Long.parseLong(id));
+        return customerRepository.findById(id);
     }
     
     @PutMapping("/{id}")
     public Optional<Object> put(@PathVariable String id, @RequestBody Invoice input) {
-        return customerRepository.findById(Long.parseLong(id))
+        return customerRepository.findById(id)
         		.map(invoice ->{
         			invoice.setAmount(input.getAmount());
         			invoice.setCustomerId(input.getCustomerId());
@@ -54,9 +54,8 @@ public class InvoiceRestController {
     }
     
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable String id) {
-        customerRepository.deleteById(Long.parseLong(id));
-    	return ResponseEntity.ok(200);
+    public void delete(@PathVariable String id) {
+         customerRepository.deleteById(id);
     }
     
 }

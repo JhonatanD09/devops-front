@@ -1,35 +1,32 @@
 package co.edu.uptc.eisc.devops.billing.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import lombok.Data;
 
-@Entity
-@Data
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Document(collection = "Invoice")
 public class Invoice {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	private long customerId;
+	
+	private String id;
+	private String customerId;
 	private String number;
 	private String detail;
 	private double amount;
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public long getCustomerId() {
+	public String getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(long customerId) {
+	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
 	}
 

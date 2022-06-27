@@ -1,8 +1,8 @@
 package co.edu.uptc.eisc.devops.customer.respository;
 
 import co.edu.uptc.eisc.devops.customer.entities.Customer;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
+public interface CustomerRepository extends MongoRepository<Customer, String> {
     
 }

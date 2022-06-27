@@ -1,25 +1,22 @@
 package co.edu.uptc.eisc.devops.customer.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import lombok.Data;
 
-@Entity
-@Data
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Document(collection = "customer")
 public class Customer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	
+	private String id;
 	private String name;
 	private String phone;
 
-	public long getId() {
+
+	public String getId() {
 		return id;
 	}
-
-	public void setId(long id) {
+	
+	public void setId(String id) {
 		this.id = id;
 	}
 

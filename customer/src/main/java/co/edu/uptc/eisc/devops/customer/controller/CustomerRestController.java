@@ -32,12 +32,12 @@ public class CustomerRestController {
     
     @GetMapping("/{id}")
     public Optional<Customer> get(@PathVariable String id) {
-        return customerRepository.findById(Long.parseLong(id));
+        return customerRepository.findById(id);
     }
     
     @PutMapping("/{id}")
     public Optional<Object> put(@PathVariable String id, @RequestBody Customer input) {
-    	 return customerRepository.findById(Long.parseLong(id))
+    	 return customerRepository.findById(id)
     		      .map(customer -> {    
     		    	  customer.setName(input.getName());
     		    	  customer.setPhone(input.getPhone());
@@ -55,7 +55,7 @@ public class CustomerRestController {
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable String id) {
     	System.out.println("eliminando");
-         customerRepository.deleteById(Long.parseLong(id));
+         customerRepository.deleteById(id);
          return ResponseEntity.ok(200);    
        }
     
