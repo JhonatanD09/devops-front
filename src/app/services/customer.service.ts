@@ -58,7 +58,7 @@ export class CustomerService {
   deleteCustomer = (id:string) => {
     this.http.delete(this.BASE_URL+`/${id}`)
     .subscribe(()=>{
-
+      this.getAllCustomers();
     })
   }
 
