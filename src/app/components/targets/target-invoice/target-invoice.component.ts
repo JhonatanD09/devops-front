@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { SwitchService } from 'src/app/services/switch.service';
+import { invoiceService } from 'src/app/services/invoice.service';
 
 @Component({
   selector: 'app-target-invoice',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TargetInvoiceComponent implements OnInit {
 
-  constructor() { }
+  @Input() invoice :any
+
+  constructor(private modalService : SwitchService, public invoiceService:invoiceService) { }
+
 
   ngOnInit(): void {
   }
 
+  deleteInvoice(e:Event){
+    let btn = e.target as HTMLButtonElement
+    let id = btn.id
+    this.invoiceService.deleteInvoice(id)
+  }
 }

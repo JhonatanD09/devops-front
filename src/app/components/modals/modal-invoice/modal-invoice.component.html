@@ -1,0 +1,21 @@
+<div class="modal-invoice">
+  <div class="modal-body-invoice">
+    <button (click) ="closeModal()"class="x">x</button>
+    <div class="title-invoice">
+      <h3>Agregar Factura</h3>
+    </div>
+    <div class="inputs-invoice">
+      <input type="text" placeholder="Id Cliente" [(ngModel)]="idClient">
+      <input type="text" placeholder="Numero" [(ngModel)]="number">
+      <input type="text" placeholder="Descripcion" [(ngModel)]="description">
+      <input type="text" placeholder="Monto" [(ngModel)]="amount">
+    </div>
+    <div class="btn-add-invoice">
+      <button
+      class="add-invoice"
+      (click)="addInvoice()">
+        Agregar
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,14 @@
-<p>invoice works!</p>
+<div class=".container-invoice">
+  <button
+    (click)="openModal()"
+    >Agregar</button>
+  <div *ngIf="modalSwitch === true">
+    <app-modal-invoice></app-modal-invoice>
+  </div>
+  <div class="target-invoice-container">
+    <app-target-invoice
+    *ngFor="let invoice of this.invoiceServ.invoices"
+    [invoice]="invoice"
+    ></app-target-invoice>
+  </div>
+</div>

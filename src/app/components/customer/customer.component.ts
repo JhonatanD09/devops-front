@@ -16,9 +16,6 @@ export class CustomerComponent implements OnInit {
   ngOnInit(): void {
     this.customerService.getAllCustomers();
     this.modalService.$modal.subscribe((value) => {this.modalSwitch = value
-    if(value == false){
-      console.log("consulta...")
-    }
     })
   }
 
@@ -27,7 +24,6 @@ export class CustomerComponent implements OnInit {
   }
 
   deleteCustomer(){
-    console.log('dlete')
     this.customerService.deleteCustomer('12')
   }
 }

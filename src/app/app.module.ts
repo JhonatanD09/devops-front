@@ -10,6 +10,7 @@ import { TargetCustomerComponent } from './components/targets/target-customer/ta
 import { TargetInvoiceComponent } from './components/targets/target-invoice/target-invoice.component';
 import { ModalCustomerComponent } from './components/modals/modal-customer/modal-customer.component';
 import { FormsModule } from '@angular/forms';
+import { ModalInvoiceComponent } from './components/modals/modal-invoice/modal-invoice.component';
 
 
 const appRouter:Routes = [
@@ -26,6 +27,7 @@ const appRouter:Routes = [
     TargetCustomerComponent,
     TargetInvoiceComponent,
     ModalCustomerComponent,
+    ModalInvoiceComponent,
   ],
   imports: [
     BrowserModule,

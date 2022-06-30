@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { invoiceService } from 'src/app/services/invoice.service';
+import { SwitchService } from 'src/app/services/switch.service';
 
 @Component({
   selector: 'app-invoice',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoiceComponent implements OnInit {
 
-  constructor() { }
+  modalSwitch: boolean = false
+
+  constructor(private modalService : SwitchService ,public invoiceServ:invoiceService) { }
 
   ngOnInit(): void {
+    this.invoiceServ.getAllInvoices()
+    this.modalService.$modal.subscribe((value)=>{
+      this.modalSwitch = value
+    })
   }
 
+  openModal(){
+    this.modalSwitch = true
+  }
 }

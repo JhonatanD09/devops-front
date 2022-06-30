@@ -1,1 +1,15 @@
-<p>target-invoice works!</p>
+
+<div class="target-invoice">
+    <h3>id cliente : {{invoice.customerId}}</h3>
+    <h3>numero : {{invoice.number}}</h3>
+    <h3>detalle : {{invoice.detail}}</h3>
+    <h3>Monto : $ {{invoice.amount}}</h3>
+    <div class="btn-delete-invoice">
+      <button
+      [id]="invoice.id"
+      class="delete-invoice"
+      (click)="deleteInvoice($event)"
+      >Eliminar</button>
+    </div>
+</div>
+
